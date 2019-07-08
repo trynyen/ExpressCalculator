@@ -33,19 +33,24 @@ app.get("/:operator/:num1/:num2", function (req, res) {
 
     switch (operator) {
         case "add":
+        case "plus":
+        case "+":
             console.log(num1 + num2);
             result = num1 + num2;
             res.send(result.toString());
             break;
         case "subtract":
+        case "-":
             result = num1 - num2;
             res.send(result.toString());
             break;
         case "multiply":
+        case "*":
             result = num1 * num2;
             res.send(result.toString());
             break;
         case "divide":
+        case "/":
             result = num1 / num2;
             res.send(result.toFixed(2).toString());
             break;
