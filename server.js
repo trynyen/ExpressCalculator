@@ -29,27 +29,28 @@ app.get("/:operator/:num1/:num2", function (req, res) {
     var operator = req.params.operator;
     var num1 = parseInt(req.params.num1);
     var num2 = parseInt(req.params.num2);
+    var result = "";
 
     switch (operator) {
         case "add":
             console.log(num1 + num2);
-            var sum = num1 + num2;
-            res.send(sum.toString());
+            result = num1 + num2;
+            res.send(result.toString());
             break;
         case "subtract":
-            var sub = num1 - num2;
-            res.send(sub.toString());
+            result = num1 - num2;
+            res.send(result.toString());
             break;
         case "multiply":
-            var mul = num1 * num2;
-            res.send(mul.toString());
+            result = num1 * num2;
+            res.send(result.toString());
             break;
         case "divide":
-            var div = num1 / num2;
-            res.send(div.toFixed(2).toString());
+            result = num1 / num2;
+            res.send(result.toFixed(2).toString());
             break;
         default:
-            res.send("Operator needs to be either add, substract, multiply, or divide");
+            res.send("Operator needs to be either add, subtract, multiply, or divide");
             break;
     }
 })
